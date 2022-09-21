@@ -1,0 +1,3 @@
+vk_api_token = 'vk1.a.y4fniRN9fYU49-PlngfPgAUk0OnPS2yFECKEqonzdMbllv1mjreBol6wQU-pdyiv9I6-RInOX2315sEsH-HLXzlDYWwC6HaTY0FhlPChzw0vBZmX8Z-_TuAFrNEnEsgsL9nDJde7cFR89tNA8JyoIteOQkHxaFqqL4GkmPDvzPBeGCNbMXIhz2scYv6WAY_7'
+group_id = 216068616
+test_data = True

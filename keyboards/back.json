@@ -1,0 +1,21 @@
+{
+  "one_time": false,
+  "buttons": [
+    [
+      {
+        "action": {
+          "type": "text",
+          "label": "Back to categories"
+        },
+        "color": "positive"
+      },
+        {
+        "action": {
+          "type": "text",
+          "label": "Help"
+        },
+        "color": "negative"
+      }
+    ]
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "one_time": false,
+  "buttons": [
+    [
+      {
+        "action": {
+          "type": "text",
+          "label": "Our goods"
+        },
+        "color": "positive"
+      },
+        {
+        "action": {
+          "type": "text",
+          "label": "Help"
+        },
+        "color": "negative"
+      }
+    ]
+  ]
+}
