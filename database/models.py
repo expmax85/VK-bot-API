@@ -1,10 +1,8 @@
-from sqlalchemy import create_engine, Column, Integer, String, ForeignKey
-from sqlalchemy.orm import sessionmaker, declarative_base, relationship
+from sqlalchemy import Column, Integer, String, ForeignKey, create_engine
+from sqlalchemy.orm import relationship, declarative_base
+from config import DB_URL
 
-engine = create_engine("sqlite:///pastry_shop.db")
-Session = sessionmaker(bind=engine)
-session = Session()
-
+engine = create_engine(DB_URL)
 Base = declarative_base(bind=engine)
 
 
@@ -12,9 +10,11 @@ class Pastry(Base):
     __tablename__ = 'pastry'
 
     id = Column('id', Integer, primary_key=True)
-    title = Column('name', String(80), nullable=False)
+    title = Column('title', String(80), nullable=False)
+    description = Column('description', String(300))
     category_id = Column(Integer, ForeignKey('categories.id'))
     category = relationship('Category', back_populates='pastry', cascade='all', lazy='joined')
+    image = Column('image', String(80))
 
     def __repr__(self) -> str:
         return self.title
