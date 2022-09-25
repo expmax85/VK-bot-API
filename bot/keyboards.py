@@ -32,6 +32,3 @@ class KeyBoard:
     def get_kb_from_json(self, board_name: str):
         with open(f'keyboards/{board_name}.json', mode='r', encoding='utf-8') as kb:
             return kb.read()
-
-
-keyboard = KeyBoard()

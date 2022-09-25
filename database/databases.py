@@ -2,7 +2,6 @@ from typing import List
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from config import DB_URL
 from database.models import Category, Pastry
 
 
@@ -20,23 +19,23 @@ class Database:
                       Category(name='Other')]
 
         categories[0].pastry.extend([
-            Pastry(title='Napoleon', image='12.jpg'),
-            Pastry(title='Praga')
+            Pastry(title='Napoleon', image='napoleon.jpg'),
+            Pastry(title='Praga', image='praga.jpg')
         ])
 
         categories[1].pastry.extend([
-            Pastry(title='Levuve'),
-            Pastry(title='Rafaello'),
-            Pastry(title='Ferrero')
+            Pastry(title='Levuve', image='levuve.jpg'),
+            Pastry(title='Rafaello', image='rafaello.jpg'),
+            Pastry(title='Ferrero', image='Ferrero.jpg')
         ])
         categories[2].pastry.extend([
-            Pastry(title='Coca-Cola'),
-            Pastry(title='Lipton-Tea'),
-            Pastry(title='Sprite')
+            Pastry(title='Coca-Cola', image='Coca-Cola.jpg'),
+            Pastry(title='Lipton-Tea', image='Lipton.jpg'),
+            Pastry(title='Sprite', image='sprite.jpg')
         ])
         categories[3].pastry.extend([
-            Pastry(title='Ice Cream'),
-            Pastry(title='Gele')
+            Pastry(title='Ice Cream', image='ice.jpg'),
+            Pastry(title='Jelly', image='jelly.jpg')
         ])
         self.session.add_all(categories)
         self.session.commit()
@@ -48,6 +47,3 @@ class Database:
     def get_goods_by_cty(self, cty: str) -> List:
         category_id = self.session.query(Category.id).filter(Category.name.like(cty)).one_or_none()[0]
         return self.session.query(Pastry).filter(Pastry.category_id == category_id).all()
-
-
-db = Database(db_url=DB_URL)
